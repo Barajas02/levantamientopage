@@ -20,19 +20,12 @@
             <a href="/admin" class="btn ghost">Panel Admin</a>
         {% endif %}
         <a href="/logout" class="btn danger">Cerrar sesión</a>
+        <a href="{{ url_for('descargar_excel') }}" class="btn download">📥 Descargar Excel</a>
     </nav>
 </header>
 
 <main class="container">
     <h1>Galería de Equipos</h1>
-
-    <!-- BOTÓN DESCARGA EXCEL -->
-    <div style="margin-bottom: 25px; text-align:center;">
-    <a href="/descargar_excel" class="btn-download">
-        📥 Descargar Inventario Excel
-    </a>
-</div>
-
 
 
     <section class="galeria">

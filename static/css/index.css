@@ -285,28 +285,14 @@ body {
 /* =========================
    BOTÓN DE DESCARGA EXCEL
 ========================= */
-.btn-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 28px;
-    border-radius: 50px;
-    background: linear-gradient(135deg, #10b981, #3b82f6); /* Verde a azul degradado */
+/* index.css */
+.btn.download {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
     color: #fff;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    box-shadow: 0 12px 28px rgba(59,130,246,0.35), 0 8px 20px rgba(16,185,129,0.25);
-    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(37,99,235,0.35);
 }
 
-.btn-download:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 16px 35px rgba(59,130,246,0.45), 0 12px 28px rgba(16,185,129,0.35);
-    background: linear-gradient(135deg, #3b82f6, #10b981); /* invertir degradado al pasar el mouse */
-}
-
-.btn-download:active {
-    transform: translateY(0) scale(0.98);
-    box-shadow: 0 10px 20px rgba(59,130,246,0.25), 0 6px 16px rgba(16,185,129,0.2);
+.btn.download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 35px rgba(37,99,235,0.45);
 }
