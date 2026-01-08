@@ -75,7 +75,7 @@
                 <article class="card">
 
                     <div class="img-wrapper">
-                        <img src="/static/images/{{ img.archivo }}" alt="">
+                        <img src="{{ url_for('static', filename='images/' + img.archivo) }}" alt="{{ img.nombre }}">
                     </div>
 
                     <div class="card-body">
@@ -98,6 +98,14 @@
     </section>
 
 </main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>
+        © 2026 · Todos los derechos reservados<br>
+        <span>Alejandro Barajas R.</span>
+    </p>
+</footer>
 
 </body>
 </html>
