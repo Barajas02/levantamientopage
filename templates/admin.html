@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Administrador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+
+<header class="admin-topbar">
+    <div class="brand">
+        <span>Admin Panel</span>
+    </div>
+
+    <nav class="admin-actions">
+        <a href="/galeria" class="btn ghost">⬅ Galería</a>
+        <a href="/logout" class="btn danger">Cerrar sesión</a>
+    </nav>
+</header>
+
+<main class="admin-container">
+
+    <!-- FORMULARIO -->
+    <section class="upload-card">
+        <h2>Registrar nuevo equipo</h2>
+
+        <form method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label>Nombre del producto</label>
+                <input type="text" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label>Modelo</label>
+                <input type="text" name="modelo" required>
+            </div>
+
+            <div class="form-group">
+                <label>Serie</label>
+                <input type="text" name="serie" required>
+            </div>
+
+            <div class="form-group">
+                <label>Cantidad</label>
+                <input type="number" name="cantidad" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label>Sitio</label>
+                <input type="text" name="sitio" required>
+            </div>
+
+            <div class="form-group">
+                <label>Imagen</label>
+                <input type="file" name="imagen" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="btn primary">
+                Guardar equipo
+            </button>
+
+        </form>
+    </section>
+
+    <!-- GALERÍA ADMIN -->
+    <section class="gallery-section">
+        <h2>Equipos registrados</h2>
+
+        <div class="galeria">
+            {% for img in imagenes %}
+                <article class="card">
+
+                    <div class="img-wrapper">
+                        <img src="/static/images/{{ img.archivo }}" alt="">
+                    </div>
+
+                    <div class="card-body">
+                        <h3>{{ img.nombre }}</h3>
+                        <p><strong>Modelo:</strong> {{ img.modelo }}</p>
+                        <p><strong>Serie:</strong> {{ img.serie }}</p>
+                        <p><strong>Cantidad:</strong> {{ img.cantidad }}</p>
+                        <p><strong>Sitio:</strong> {{ img.sitio }}</p>
+
+                        <a href="/borrar/{{ loop.index0 }}" class="btn delete">
+                            Eliminar
+                        </a>
+                    </div>
+
+                </article>
+            {% else %}
+                <p class="empty">No hay equipos registrados.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+/* =========================
+   RESET & VARIABLES
+========================= */
+:root {
+    --primary: #2563eb;
+    --primary-soft: rgba(37,99,235,0.12);
+    --danger: #ef4444;
+    --bg: #f6f8fc;
+    --card-bg: #ffffff;
+    --text-main: #111827;
+    --text-soft: #6b7280;
+    --radius-xl: 22px;
+    --radius-md: 14px;
+    --shadow-soft: 0 20px 40px rgba(0,0,0,0.06);
+    --shadow-strong: 0 40px 80px rgba(0,0,0,0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+    background:
+        radial-gradient(circle at top, #eef2ff 0%, transparent 40%),
+        var(--bg);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+    height: 72px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.logo span {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.btn.ghost {
+    color: var(--primary);
+}
+
+.btn.ghost:hover {
+    background: var(--primary-soft);
+    transform: translateY(-1px);
+}
+
+.btn.danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(239,68,68,0.35);
+}
+
+.btn.danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 35px rgba(239,68,68,0.45);
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+.container {
+    max-width: 1500px;
+    margin: auto;
+    padding: 50px 40px;
+}
+
+.container h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+    letter-spacing: -0.7px;
+}
+
+/* =========================
+   GALERÍA
+========================= */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 32px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    position: relative;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.15),
+        transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: var(--shadow-strong);
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+/* =========================
+   IMAGEN
+========================= */
+.img-wrapper {
+    height: 190px;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card:hover img {
+    transform: scale(1.15);
+}
+
+/* =========================
+   BODY CARD
+========================= */
+.card-body {
+    padding: 18px 20px 22px;
+    text-align: center;
+}
+
+.card-body h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+.card-body p {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    line-height: 1.4;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+.empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 0;
+    font-size: 1.1rem;
+    color: var(--text-soft);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .container h1 {
+        font-size: 1.8rem;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    margin-top: 80px;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.footer span {
+    font-weight: 600;
+    color: var(--text-main);
+}

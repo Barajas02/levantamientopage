@@ -1,0 +1,203 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* BASE */
+body {
+    background: #f4f6fb;
+    color: #1f2937;
+}
+
+/* TOPBAR */
+.admin-topbar {
+    height: 68px;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.brand span {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* ACTIONS */
+.admin-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn.ghost {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+.btn.ghost:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.btn.danger {
+    background: #ef4444;
+    color: #fff;
+}
+
+.btn.danger:hover {
+    background: #dc2626;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    box-shadow: 0 10px 25px rgba(37,99,235,0.5);
+    transform: translateY(-1px);
+}
+
+.btn.delete {
+    background: rgba(239,68,68,0.1);
+    color: #ef4444;
+}
+
+.btn.delete:hover {
+    background: rgba(239,68,68,0.2);
+}
+
+/* CONTAINER */
+.admin-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* UPLOAD CARD */
+.upload-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+    max-width: 420px;
+    margin-bottom: 40px;
+}
+
+.upload-card h2 {
+    margin-bottom: 20px;
+}
+
+/* FORM */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    opacity: 0.7;
+}
+
+.form-group input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+}
+
+/* GALLERY */
+.gallery-section h2 {
+    margin-bottom: 20px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+}
+
+/* IMAGE */
+.img-wrapper {
+    height: 150px;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* BODY */
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-body h3 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+/* EMPTY */
+.empty {
+    opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 20px;
+    }
+
+    .upload-card {
+        max-width: 100%;
+    }
+}

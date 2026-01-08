@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-card">
+        <h2>Bienvenido</h2>
+        <p>Inicia sesión para continuar</p>
+
+        <form method="post">
+            <div class="input-group">
+                <input type="text" name="usuario" required>
+                <label>Usuario</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" name="password" required>
+                <label>Contraseña</label>
+            </div>
+
+            <button type="submit" class="btn-login">
+                Entrar
+            </button>
+        </form>
+
+        <span class="footer-text">
+            Sistema de Gestión © 2026
+        </span>
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="login-footer">
+    <p>
+        © 2026 · Todos los derechos reservados<br>
+        <span>Alejandro Barajas R.</span>
+    </p>
+</footer>
+
+</body>
+</html>

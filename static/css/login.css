@@ -1,0 +1,152 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Fondo */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor */
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Tarjeta */
+.login-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 40px 30px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    animation: fadeIn 0.8s ease;
+}
+
+/* Títulos */
+.login-card h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.login-card p {
+    text-align: center;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 30px;
+}
+
+/* Inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,0.4);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.7);
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+/* Animación label */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -6px;
+    font-size: 0.8rem;
+    color: #00d4ff;
+}
+
+/* Botón */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.5);
+}
+
+/* Footer */
+.footer-text {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+/* Animación entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+}
+
+
+/* =========================
+   FOOTER LOGIN
+========================= */
+.login-footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.login-footer span {
+    font-weight: 600;
+    color: #ffffff;
+}
