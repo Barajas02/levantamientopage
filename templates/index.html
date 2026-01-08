@@ -27,9 +27,33 @@
     <h1>Galería de Equipos</h1>
 
     <section class="galeria">
+        {% set imagenes = [
+            {'archivo':'prod001.jpeg','nombre':'Router Principal','modelo':'RTX-900','serie':'ABC123','cantidad':2,'sitio':'Oficina Central'},
+            {'archivo':'prod002.jpeg','nombre':'Switch Secundario','modelo':'SW-450','serie':'XYZ789','cantidad':5,'sitio':'Sucursal Norte'},
+            {'archivo':'prod003.jpeg','nombre':'Servidor Base','modelo':'SVR-3000','serie':'SVR001','cantidad':1,'sitio':'Data Center'},
+            {'archivo':'prod004.jpeg','nombre':'Access Point','modelo':'AP-200','serie':'AP002','cantidad':10,'sitio':'Sucursal Sur'},
+            {'archivo':'prod005.jpeg','nombre':'Router Secundario','modelo':'RTX-700','serie':'ABC124','cantidad':1,'sitio':'Sucursal Norte'},
+            {'archivo':'prod006.jpeg','nombre':'Switch Principal','modelo':'SW-900','serie':'XYZ790','cantidad':3,'sitio':'Oficina Central'},
+            {'archivo':'prod007.jpeg','nombre':'Servidor Backup','modelo':'SVR-3100','serie':'SVR002','cantidad':1,'sitio':'Data Center'},
+            {'archivo':'prod008.jpeg','nombre':'Access Point 2','modelo':'AP-201','serie':'AP003','cantidad':7,'sitio':'Sucursal Norte'},
+            {'archivo':'prod009.jpeg','nombre':'Router Backup','modelo':'RTX-800','serie':'ABC125','cantidad':1,'sitio':'Sucursal Sur'},
+            {'archivo':'prod010.jpeg','nombre':'Switch de Laboratorio','modelo':'SW-500','serie':'XYZ791','cantidad':2,'sitio':'Laboratorio'},
+            {'archivo':'prod011.jpeg','nombre':'Servidor Web','modelo':'SVR-3200','serie':'SVR003','cantidad':1,'sitio':'Data Center'},
+            {'archivo':'prod012.jpeg','nombre':'Access Point 3','modelo':'AP-202','serie':'AP004','cantidad':5,'sitio':'Oficina Central'},
+            {'archivo':'prod013.jpeg','nombre':'Router Oficina','modelo':'RTX-600','serie':'ABC126','cantidad':1,'sitio':'Oficina Principal'},
+            {'archivo':'prod014.jpeg','nombre':'Switch Laboratorio 2','modelo':'SW-550','serie':'XYZ792','cantidad':2,'sitio':'Laboratorio'},
+            {'archivo':'prod015.jpeg','nombre':'Servidor SQL','modelo':'SVR-3300','serie':'SVR004','cantidad':1,'sitio':'Data Center'},
+            {'archivo':'prod016.jpeg','nombre':'Access Point 4','modelo':'AP-203','serie':'AP005','cantidad':6,'sitio':'Sucursal Sur'},
+            {'archivo':'prod017.jpeg','nombre':'Router Backup 2','modelo':'RTX-850','serie':'ABC127','cantidad':1,'sitio':'Sucursal Norte'},
+            {'archivo':'prod018.jpeg','nombre':'Switch Oficina','modelo':'SW-600','serie':'XYZ793','cantidad':3,'sitio':'Oficina Principal'},
+            {'archivo':'prod019.jpeg','nombre':'Servidor Mail','modelo':'SVR-3400','serie':'SVR005','cantidad':1,'sitio':'Data Center'},
+            {'archivo':'prod020.jpeg','nombre':'Access Point 5','modelo':'AP-204','serie':'AP006','cantidad':4,'sitio':'Sucursal Norte'},
+            {'archivo':'prod021.jpeg','nombre':'Router Laboratorio','modelo':'RTX-750','serie':'ABC128','cantidad':1,'sitio':'Laboratorio'},
+            {'archivo':'prod022.jpeg','nombre':'Switch Backup','modelo':'SW-650','serie':'XYZ794','cantidad':2,'sitio':'Data Center'}
+        ] %}
+
         {% for img in imagenes %}
             <article class="card">
-
                 <div class="img-wrapper">
                     <img src="{{ url_for('static', filename='images/' + img.archivo) }}" alt="{{ img.nombre }}">
                 </div>
@@ -41,10 +65,7 @@
                     <p><strong>Cantidad:</strong> {{ img.cantidad }}</p>
                     <p><strong>Sitio:</strong> {{ img.sitio }}</p>
                 </div>
-
             </article>
-        {% else %}
-            <p class="empty">No hay imágenes cargadas.</p>
         {% endfor %}
     </section>
 </main>
